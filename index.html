@@ -230,9 +230,15 @@
     /* ── VIDEOS ── */
     .videos { background: var(--carbon); }
     .vid-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; }
-    .tiktok-wrap { display: flex; justify-content: center; }
-    .tiktok-embed { border: 1px solid rgba(212,175,55,0.15) !important; border-radius: var(--r) !important; overflow: hidden; }
-    .vid-cta { text-align: center; margin-top: 2rem; }
+    .vid-card { display: flex; flex-direction: column; background: var(--gray); border: 1px solid rgba(212,175,55,0.1); border-radius: var(--r); overflow: hidden; transition: border-color var(--t), transform var(--t); text-decoration: none; }
+    .vid-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+    .vid-thumb { background: linear-gradient(135deg, #1a1a1a, #0d0d0d); height: 160px; display: flex; align-items: center; justify-content: center; position: relative; }
+    .vid-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 48px; height: 48px; background: rgba(212,175,55,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--carbon); padding-left: 4px; }
+    .vid-ico { font-size: 3rem; opacity: 0.15; }
+    .vid-info { padding: 1rem; }
+    .vid-label { font-size: 0.7rem; color: var(--gold); font-weight: 600; letter-spacing: 0.5px; display: block; margin-bottom: 0.3rem; }
+    .vid-info p { font-size: 0.85rem; color: var(--white); margin: 0 0 0.8rem; }
+    .vid-cta-btn { font-size: 0.75rem; color: var(--gold); font-weight: 600; border: 1px solid rgba(212,175,55,0.3); border-radius: 4px; padding: 0.3rem 0.7rem; }    .vid-cta { text-align: center; margin-top: 2rem; }
 
     /* ── BOOK ── */
     .book { background: var(--gray); }
@@ -306,7 +312,6 @@
       .about-grid, .contact-grid, .book-grid { grid-template-columns: 1fr; gap: 2rem; }
       .srv-grid { grid-template-columns: 1fr; }
       .vid-grid { grid-template-columns: 1fr; }
-      .tiktok-wrap { width: 100%; }
       .frow     { grid-template-columns: 1fr; }
       .stats    { grid-template-columns: 1fr 1fr; }
       .book-cover { width: 160px; }
@@ -516,37 +521,41 @@
     <div class="line r"></div>
     <p class="sub r">Sesiones de batería, beatmaking y percusión en vivo. Sígueme en TikTok para más contenido.</p>
 
+    <!-- Videos TikTok - tarjetas directas (compatibles con móvil) -->
     <div class="vid-grid">
-      <div class="tiktok-wrap r">
-        <blockquote class="tiktok-embed"
-          cite="https://www.tiktok.com/@huesodrumsdepeso/video/7628666894588923153"
-          data-video-id="7628666894588923153"
-          style="max-width:325px;min-width:325px;">
-          <section>
-            <a href="https://www.tiktok.com/@huesodrumsdepeso" target="_blank" rel="noopener">@huesodrumsdepeso</a>
-          </section>
-        </blockquote>
-      </div>
-      <div class="tiktok-wrap r">
-        <blockquote class="tiktok-embed"
-          cite="https://www.tiktok.com/@huesodrumsdepeso/video/7700387055297236245"
-          data-video-id="7700387055297236245"
-          style="max-width:325px;min-width:325px;">
-          <section>
-            <a href="https://www.tiktok.com/@huesodrumsdepeso" target="_blank" rel="noopener">@huesodrumsdepeso</a>
-          </section>
-        </blockquote>
-      </div>
-      <div class="tiktok-wrap r">
-        <blockquote class="tiktok-embed"
-          cite="https://www.tiktok.com/@huesodrumsdepeso/video/7619459840078826753"
-          data-video-id="7619459840078826753"
-          style="max-width:325px;min-width:325px;">
-          <section>
-            <a href="https://www.tiktok.com/@huesodrumsdepeso" target="_blank" rel="noopener">@huesodrumsdepeso</a>
-          </section>
-        </blockquote>
-      </div>
+      <a href="https://www.tiktok.com/@huesodrumsdepeso/video/7628666894588923153" target="_blank" rel="noopener" class="vid-card r">
+        <div class="vid-thumb">
+          <div class="vid-play">▶</div>
+          <div class="vid-ico">🥁</div>
+        </div>
+        <div class="vid-info">
+          <span class="vid-label">@huesodrumsdepeso</span>
+          <p>Sesión de batería en estudio</p>
+          <span class="vid-cta-btn">Ver en TikTok ↗</span>
+        </div>
+      </a>
+      <a href="https://www.tiktok.com/@huesodrumsdepeso/video/7700387055297236245" target="_blank" rel="noopener" class="vid-card r">
+        <div class="vid-thumb">
+          <div class="vid-play">▶</div>
+          <div class="vid-ico">🎹</div>
+        </div>
+        <div class="vid-info">
+          <span class="vid-label">@huesodrumsdepeso</span>
+          <p>Beatmaking · Neo Cuban Beat</p>
+          <span class="vid-cta-btn">Ver en TikTok ↗</span>
+        </div>
+      </a>
+      <a href="https://www.tiktok.com/@huesodrumsdepeso/video/7619459840078826753" target="_blank" rel="noopener" class="vid-card r">
+        <div class="vid-thumb">
+          <div class="vid-play">▶</div>
+          <div class="vid-ico">🔥</div>
+        </div>
+        <div class="vid-info">
+          <span class="vid-label">@huesodrumsdepeso</span>
+          <p>HeavyTimba en vivo</p>
+          <span class="vid-cta-btn">Ver en TikTok ↗</span>
+        </div>
+      </a>
     </div>
     <div class="vid-cta r">
       <a href="https://www.tiktok.com/@huesodrumsdepeso" target="_blank" rel="noopener" class="btn btn-gold">Ver Todo en TikTok ↗</a>
@@ -702,6 +711,5 @@
     }
   }
 </script>
-<script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 </html>
