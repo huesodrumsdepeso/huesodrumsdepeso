@@ -231,7 +231,10 @@
     .videos { background: var(--carbon); }
     .vid-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; align-items: start; }
     .vid-wrap { border-radius: var(--r); overflow: hidden; border: 1px solid rgba(212,175,55,0.15); background: var(--gray); position: relative; padding-top: 177%; }
-    .vid-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }    .vid-cta { text-align: center; margin-top: 2rem; }
+    .vid-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    .vid-grid-landscape { grid-template-columns: repeat(2,1fr); }
+    .vid-wrap-land { border-radius: var(--r); overflow: hidden; border: 1px solid rgba(212,175,55,0.15); background: var(--gray); position: relative; padding-top: 56.25%; }
+    .vid-wrap-land iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }    .vid-cta { text-align: center; margin-top: 2rem; }
 
     /* ── BOOK ── */
     .book { background: var(--gray); }
@@ -305,6 +308,7 @@
       .about-grid, .contact-grid, .book-grid { grid-template-columns: 1fr; gap: 2rem; }
       .srv-grid { grid-template-columns: 1fr; }
       .vid-grid { grid-template-columns: 1fr; }
+      .vid-grid-landscape { grid-template-columns: 1fr; }
       .frow     { grid-template-columns: 1fr; }
       .stats    { grid-template-columns: 1fr 1fr; }
       .book-cover { width: 160px; }
@@ -531,6 +535,34 @@
       <div class="vid-wrap r">
         <iframe src="https://www.youtube.com/embed/JxJRJVIljEA"
           title="Hueso Drums de Peso — Video 3"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <!-- Videos YouTube largos -->
+    <div class="vid-grid vid-grid-landscape r" style="margin-top:1.2rem;">
+      <div class="vid-wrap-land r">
+        <iframe src="https://www.youtube.com/embed/-fvi-mclMGI"
+          title="Hueso Drums de Peso — Video 4"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="vid-wrap-land r">
+        <iframe src="https://www.youtube.com/embed/pzy7sS74Ipg"
+          title="Hueso Drums de Peso — Video 5"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="vid-wrap-land r">
+        <iframe src="https://www.youtube.com/embed/8NxMc0baSkY"
+          title="Hueso Drums de Peso — Video 6"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="vid-wrap-land r">
+        <iframe src="https://www.youtube.com/embed/UD21hTZhQDk"
+          title="Hueso Drums de Peso — Video 7"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen loading="lazy"></iframe>
       </div>
