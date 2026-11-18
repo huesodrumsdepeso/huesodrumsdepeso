@@ -230,16 +230,8 @@
     /* ── VIDEOS ── */
     .videos { background: var(--carbon); }
     .vid-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; align-items: start; }
-    .vid-card { display: flex; flex-direction: column; border-radius: var(--r); overflow: hidden; border: 1px solid rgba(212,175,55,0.15); background: var(--gray); text-decoration: none; transition: border-color var(--t), transform var(--t); }
-    .vid-card:hover { border-color: var(--gold); transform: translateY(-3px); }
-    .vid-thumb { position: relative; width: 100%; padding-top: 177%; background: #111; overflow: hidden; }
-    .vid-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: opacity var(--t); }
-    .vid-card:hover .vid-thumb img { opacity: 1; }
-    .vid-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 56px; height: 56px; background: rgba(212,175,55,0.92); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: var(--carbon); padding-left: 5px; z-index: 2; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-    .vid-info { padding: 0.9rem 1rem; }
-    .vid-handle { font-size: 0.68rem; color: var(--gold); font-weight: 600; letter-spacing: 0.5px; display: block; margin-bottom: 0.3rem; }
-    .vid-info p { font-size: 0.82rem; color: var(--white); margin: 0 0 0.6rem; }
-    .vid-open { font-size: 0.72rem; color: var(--muted); }    .vid-cta { text-align: center; margin-top: 2rem; }
+    .vid-wrap { border-radius: var(--r); overflow: hidden; border: 1px solid rgba(212,175,55,0.15); background: var(--gray); position: relative; padding-top: 177%; }
+    .vid-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }    .vid-cta { text-align: center; margin-top: 2rem; }
 
     /* ── BOOK ── */
     .book { background: var(--gray); }
@@ -522,50 +514,29 @@
     <div class="line r"></div>
     <p class="sub r">Sesiones de batería, beatmaking y percusión en vivo. Sígueme en TikTok para más contenido.</p>
 
-    <!-- Videos TikTok - miniaturas reales con link directo -->
+    <!-- Videos YouTube Shorts -->
     <div class="vid-grid">
-      <a href="https://www.tiktok.com/@huesodrumsdepeso/video/7628666894588923153" target="_blank" rel="noopener" class="vid-card r">
-        <div class="vid-thumb">
-          <img src="https://p16-sign.tiktokcdn-us.com/obj/tos-useast5-p-0068-tx/7628666894588923153~tplv-tiktokx-share-play.jpeg"
-               onerror="this.style.display='none'"
-               alt="Video TikTok — Sesión de batería" loading="lazy" />
-          <div class="vid-play">▶</div>
-        </div>
-        <div class="vid-info">
-          <span class="vid-handle">@huesodrumsdepeso</span>
-          <p>Sesión de batería en estudio</p>
-          <span class="vid-open">Ver en TikTok ↗</span>
-        </div>
-      </a>
-      <a href="https://www.tiktok.com/@huesodrumsdepeso/video/7700387055297236245" target="_blank" rel="noopener" class="vid-card r">
-        <div class="vid-thumb">
-          <img src="https://p16-sign.tiktokcdn-us.com/obj/tos-useast5-p-0068-tx/7700387055297236245~tplv-tiktokx-share-play.jpeg"
-               onerror="this.style.display='none'"
-               alt="Video TikTok — Beatmaking" loading="lazy" />
-          <div class="vid-play">▶</div>
-        </div>
-        <div class="vid-info">
-          <span class="vid-handle">@huesodrumsdepeso</span>
-          <p>Beatmaking · Neo Cuban Beat</p>
-          <span class="vid-open">Ver en TikTok ↗</span>
-        </div>
-      </a>
-      <a href="https://www.tiktok.com/@huesodrumsdepeso/video/7619459840078826753" target="_blank" rel="noopener" class="vid-card r">
-        <div class="vid-thumb">
-          <img src="https://p16-sign.tiktokcdn-us.com/obj/tos-useast5-p-0068-tx/7619459840078826753~tplv-tiktokx-share-play.jpeg"
-               onerror="this.style.display='none'"
-               alt="Video TikTok — HeavyTimba" loading="lazy" />
-          <div class="vid-play">▶</div>
-        </div>
-        <div class="vid-info">
-          <span class="vid-handle">@huesodrumsdepeso</span>
-          <p>HeavyTimba en vivo</p>
-          <span class="vid-open">Ver en TikTok ↗</span>
-        </div>
-      </a>
+      <div class="vid-wrap r">
+        <iframe src="https://www.youtube.com/embed/yei8JatG1vw"
+          title="Hueso Drums de Peso — Video 1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="vid-wrap r">
+        <iframe src="https://www.youtube.com/embed/-BGEkaGmvcg"
+          title="Hueso Drums de Peso — Video 2"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="vid-wrap r">
+        <iframe src="https://www.youtube.com/embed/JxJRJVIljEA"
+          title="Hueso Drums de Peso — Video 3"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy"></iframe>
+      </div>
     </div>
     <div class="vid-cta r">
-      <a href="https://www.tiktok.com/@huesodrumsdepeso" target="_blank" rel="noopener" class="btn btn-gold">Ver Todo en TikTok ↗</a>
+      <a href="https://www.youtube.com/channel/UCf4c3foR74YJ2xT-iK926sw" target="_blank" rel="noopener" class="btn btn-gold">Ver Todo en YouTube ↗</a>
     </div>
   </div>
 </section>
