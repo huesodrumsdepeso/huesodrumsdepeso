@@ -540,7 +540,9 @@
         <span class="entity">A UNO Music Entertainment LLC</span>
       </div>
 
-      <form id="contactForm" novalidate class="r">
+      <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="r" id="contactForm">
+        <input type="hidden" name="form-name" value="contacto" />
+        <p style="display:none"><input name="bot-field" /></p>
         <div class="frow">
           <div class="fg">
             <label for="fname">Nombre</label>
@@ -569,7 +571,7 @@
         </div>
         <div>
           <button type="submit" class="btn btn-gold" style="width:100%">Enviar Mensaje →</button>
-          <p class="fnote">Abre tu cliente de correo con el mensaje pre-llenado.</p>
+          <p class="fnote">Tu mensaje llega directo a m.malejandrom@gmail.com</p>
         </div>
       </form>
     </div>
@@ -625,18 +627,14 @@
     nav.style.background = scrollY > 60 ? 'rgba(13,13,13,0.99)' : 'rgba(13,13,13,0.95)';
   });
 
-  // Contact form → mailto
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const n = document.getElementById('fname').value.trim();
-    const em = document.getElementById('femail').value.trim();
-    const s  = document.getElementById('fservice').value;
-    const m  = document.getElementById('fmsg').value.trim();
-    if (!n || !em || !s || !m) { alert('Por favor completa todos los campos.'); return; }
-    const sub  = encodeURIComponent(`[Hueso Drums de Peso] ${s} — ${n}`);
-    const body = encodeURIComponent(`Nombre: ${n}\nEmail: ${em}\nSolicitud: ${s}\n\n${m}`);
-    window.location.href = `mailto:m.malejandrom@gmail.com?subject=${sub}&body=${body}`;
-  });
+  // Contact form — Netlify Forms (manejo nativo, sin JS extra necesario)
+  // Muestra mensaje de éxito si Netlify redirige con ?success=true
+  if (window.location.search.includes('success=true')) {
+    const form = document.getElementById('contactForm');
+    if (form) {
+      form.innerHTML = '<div style="text-align:center;padding:2rem;"><div style="font-size:2.5rem;margin-bottom:1rem;">✅</div><h3 style="font-family:Oswald,sans-serif;color:var(--gold);font-size:1.2rem;text-transform:uppercase;margin-bottom:0.5rem;">¡Mensaje enviado!</h3><p style="color:var(--muted);font-size:0.9rem;">Gracias por escribir. Te respondo a la brevedad.</p></div>';
+    }
+  }
 </script>
 <script async src="https://www.tiktok.com/embed.js"></script>
 </body>
